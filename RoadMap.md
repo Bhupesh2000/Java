@@ -32,6 +32,8 @@ Day	Topic	                        Goals
 20	Build a Mini LLD Project	    E.g. Tic Tac Toe, Parking Lot, Book My Show module
 
 🧠 Bonus / Optional Topics (for after Day 20):
+Garbage Collections
+
 Java Streams API
 
 Functional Interfaces / Lambdas
