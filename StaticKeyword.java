@@ -1,3 +1,29 @@
+/*
+==================== STATIC KEYWORD SUMMARY ====================
+
+1. Static Variable:
+   - Location: `static int count` in Counter class
+   - Purpose: Shared among all instances of the class.
+   - Example: All Counter objects increment the same `count`.
+
+2. Static Method:
+   - Location: `static int getCount()` in Counter class
+   - Purpose: Can be accessed without creating an object.
+   - Note: Can only access static members directly.
+
+3. Private Constructor:
+   - Location: `private MathUtils()`
+   - Purpose: Prevents object creation; used in utility/helper classes.
+   - Example: `new MathUtils()` is invalid from outside the class.
+
+4. Static Utility Methods:
+   - Location: `static int add(int a, int b)` and `multiply(int a, int b)`
+   - Purpose: Can be called without an object. Useful for stateless operations.
+   - Example: `MathUtils.add(2, 3);`
+
+===============================================================
+*/
+
 class Counter{
     static int count = 0;
 
