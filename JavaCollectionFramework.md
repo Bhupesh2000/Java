@@ -1,27 +1,69 @@
-📚 What is JCF?
-The Java Collections Framework is a set of interfaces and classes in the java.util package that provides standardized ways to store, access, and manipulate groups of objects.
+The Java Collection Framework (JCF) is a unified architecture for representing and manipulating collections in Java. It provides interfaces, implementations (classes), and algorithms to store, retrieve, and manipulate data efficiently.
 
-Think of it as:
-Built-in containers for data (like Python’s list, set, dict)
-Includes lists, sets, maps, queues, etc.
+📚 Key Components of the Java Collection Framework
+1. Interfaces (Abstract Data Types)
+    Collection – root interface for all collections
+        List – ordered collection (can contain duplicates)
+        ⤷ e.g., ArrayList, LinkedList
+        Set – unordered collection (no duplicates)
+        ⤷ e.g., HashSet, TreeSet, LinkedHashSet
+        Queue – elements processed in a specific order
+        ⤷ e.g., PriorityQueue, ArrayDeque
+        Map – key-value pairs (not a true child of Collection)
+        ⤷ e.g., HashMap, TreeMap, LinkedHashMap
 
+2. Classes (Implementations)
+    List implementations: ArrayList, LinkedList, Vector, Stack
+    Set implementations: HashSet, LinkedHashSet, TreeSet
+    Queue implementations: PriorityQueue, ArrayDeque
+    Map implementations: HashMap, TreeMap, LinkedHashMap, Hashtable, ConcurrentHashMap
 
-🔑 Core Interfaces in JCF
-| Interface | Description                                 | Example Classes                       |
-| --------- | ------------------------------------------- | ------------------------------------- |
-| `List`    | Ordered collection (can contain duplicates) | `ArrayList`, `LinkedList`             |
-| `Set`     | Unordered, **no duplicates** allowed        | `HashSet`, `TreeSet`, `LinkedHashSet` |
-| `Map`     | Key-value pairs (like a dictionary)         | `HashMap`, `TreeMap`, `LinkedHashMap` |
-| `Queue`   | FIFO structure                              | `PriorityQueue`, `ArrayDeque`         |
+3. Algorithms
+    Provided via Collections utility class:
+        Sorting: Collections.sort(list)
+        Searching: Collections.binarySearch(list, key)
+        Shuffling: Collections.shuffle(list)
+        Reversing: Collections.reverse(list)
 
+✅ Example Code
+import java.util.*;
 
-📦 Key Implementations
-| Class        | Description                                         |
-| ------------ | --------------------------------------------------- |
-| `ArrayList`  | Dynamic array, fast random access                   |
-| `LinkedList` | Doubly-linked list, good for frequent insert/delete |
-| `HashSet`    | No duplicates, unordered                            |
-| `TreeSet`    | Sorted set                                          |
-| `HashMap`    | Key-value map, fast lookup                          |
-| `TreeMap`    | Sorted key-value map                                |
+public class CollectionDemo {
+    public static void main(String[] args) {
+        // List example
+        List<String> fruits = new ArrayList<>();
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Orange");
 
+        System.out.println("List: " + fruits);
+
+        // Set example (no duplicates)
+        Set<String> uniqueFruits = new HashSet<>(fruits);
+        uniqueFruits.add("Banana"); // Will not be added again
+        System.out.println("Set: " + uniqueFruits);
+
+        // Map example
+        Map<String, Integer> fruitCount = new HashMap<>();
+        fruitCount.put("Apple", 3);
+        fruitCount.put("Banana", 5);
+        fruitCount.put("Orange", 2);
+
+        System.out.println("Map: " + fruitCount);
+
+        // Queue example
+        Queue<String> fruitQueue = new LinkedList<>();
+        fruitQueue.add("Apple");
+        fruitQueue.add("Banana");
+        fruitQueue.add("Orange");
+
+        System.out.println("Queue: " + fruitQueue);
+        System.out.println("Removed from queue: " + fruitQueue.poll());
+        System.out.println("Queue after poll: " + fruitQueue);
+    }
+}
+
+🔑 Summary
+JCF unifies how data is handled in Java.
+Choose List for ordered collections, Set for uniqueness, Map for key-value pairs.
+Use Collections for common operations like sorting/shuffling.
